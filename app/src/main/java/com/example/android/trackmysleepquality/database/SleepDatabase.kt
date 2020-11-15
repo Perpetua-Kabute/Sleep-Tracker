@@ -24,13 +24,13 @@ import androidx.room.RoomDatabase
 @Database(entities = [SleepNight::class], version= 1, exportSchema = false )
 abstract class SleepDatabase: RoomDatabase(){
     //declare an abstract value of sleepDatabaseDao
-    abstract var sleepDatabaseDao: SleepDatabaseDao
+    abstract val sleepDatabaseDao: SleepDatabaseDao
 
     //declare a companion object
     companion object{
 
         //declare a @volatile INSTANCE variable
-        //INSTANCE will keep a reference to the database meaning we don't repeatedly open connections to the db which is expensive
+//        INSTANCE will keep a reference to the database meaning we don't repeatedly open connections to the db which is expensive
         //changes made to one thread of INSTANCE are visible to all threads
         @Volatile
         private var INSTANCE: SleepDatabase? = null
